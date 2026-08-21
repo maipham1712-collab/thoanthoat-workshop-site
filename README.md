@@ -39,7 +39,7 @@ Project → Settings → Environment Variables:
 | Key | Value |
 |---|---|
 | `RESEND_API_KEY` | the key from step 3 |
-| `NOTIFY_EMAIL` | `maipham1712@gmail.com` |
+| `NOTIFY_EMAIL` | `maipham1712@gmail.com` (comma-separate for more than one address) |
 | `FROM_EMAIL` | `Thoăn Thoắt <bookings@thoatthoatws.vietjewelers.com>` (must match a domain verified in Resend) |
 
 Redeploy after adding these (Vercel prompts you to).

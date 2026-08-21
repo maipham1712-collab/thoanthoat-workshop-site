@@ -1,6 +1,8 @@
 const { Resend } = require("resend");
 
-const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "maipham1712@gmail.com";
+// Comma-separated list supported, e.g. "a@example.com, b@example.com"
+const NOTIFY_EMAILS = (process.env.NOTIFY_EMAIL || "maipham1712@gmail.com")
+  .split(",").map((s) => s.trim()).filter(Boolean);
 const FROM_EMAIL = process.env.FROM_EMAIL || "Thoăn Thoắt <bookings@thoatthoatws.vietjewelers.com>";
 const MAX_ATTACHMENTS = 6;
 const MAX_ATTACHMENT_B64_CHARS = 3_000_000; // ~2.2MB decoded, well under provider limits per file
@@ -69,7 +71,7 @@ module.exports = async (req, res) => {
     const resend = new Resend(process.env.RESEND_API_KEY);
     const { error } = await resend.emails.send({
       from: FROM_EMAIL,
-      to: NOTIFY_EMAIL,
+      to: NOTIFY_EMAILS,
       subject: `New booking request — ${reference}`,
       html: summarize(payload),
       attachments: safeAttachments
