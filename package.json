@@ -1,0 +1,9 @@
+{
+  "name": "thoanthoat-workshop-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Thoăn Thoắt workshop site — static front end + a Vercel serverless function for booking emails.",
+  "dependencies": {
+    "resend": "^6.21.0"
+  }
+}
