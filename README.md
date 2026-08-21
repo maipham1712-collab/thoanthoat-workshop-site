@@ -6,7 +6,7 @@ submits the booking form. Everything on the site that's still a business
 placeholder (address, pricing, hours, etc.) renders visibly as `[LIKE_THIS]`
 instead of being faked — search `index.html` for `CONFIG` to fill those in.
 
-## Deploying to thoatthoatws.vietjewelers.com
+## Deploying to thoanthoatws.vietjewelers.com
 
 You'll need three free accounts: **GitHub** (to hold the code), **Vercel**
 (to host it), and **Resend** (to send the booking emails). None of these can
@@ -28,7 +28,7 @@ its "push an existing repository" instructions to connect this folder to it.
 
 ### 3. Get a Resend API key
 - Sign up at [resend.com](https://resend.com) (free tier: 3,000 emails/month).
-- Under **Domains**, add `thoatthoatws.vietjewelers.com` (or a `mail.` sibling
+- Under **Domains**, add `thoanthoatws.vietjewelers.com` (or a `mail.` sibling
   subdomain if you'd rather keep the booking subdomain purely for the site) and
   add the DNS records Resend gives you (see step 5 — same place you'll add the
   Vercel record).
@@ -40,18 +40,18 @@ Project → Settings → Environment Variables:
 |---|---|
 | `RESEND_API_KEY` | the key from step 3 |
 | `NOTIFY_EMAIL` | `maipham1712@gmail.com` (comma-separate for more than one address) |
-| `FROM_EMAIL` | `Thoăn Thoắt <bookings@thoatthoatws.vietjewelers.com>` (must match a domain verified in Resend) |
+| `FROM_EMAIL` | `Thoăn Thoắt <bookings@thoanthoatws.vietjewelers.com>` (must match a domain verified in Resend) |
 
 Redeploy after adding these (Vercel prompts you to).
 
 ### 5. Point the subdomain at Vercel
-In Vercel: Project → Settings → Domains → add `thoatthoatws.vietjewelers.com`.
+In Vercel: Project → Settings → Domains → add `thoanthoatws.vietjewelers.com`.
 Vercel will show you a CNAME record to add. In vietjewelers.com's DNS
 (wherever that's managed — your registrar or a DNS host like Cloudflare), add:
 
 | Type | Name | Value |
 |---|---|---|
-| CNAME | `thoatthoatws` | `cname.vercel-dns.com` |
+| CNAME | `thoanthoatws` | `cname.vercel-dns.com` |
 
 DNS changes can take a few minutes to a few hours to propagate. Vercel's
 domain settings page shows a green check once it sees the record.
